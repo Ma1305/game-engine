@@ -70,7 +70,6 @@ class Shape:
         self.customDraw = True
         self.customDrawFunc = newDrawFunc
 
-
     # add animation to the shape, there is a list of animation
     def addAnimation(self, animationList, animationRepeat, name, state):
         self.animating = True
@@ -104,8 +103,6 @@ class Shape:
                 self.y += animation.animationList[animation.partOn][1]
                 self.w += animation.animationList[animation.partOn][2]
                 self.h += animation.animationList[animation.partOn][3]
-
-
 
 
     def change(self, frameCounter):

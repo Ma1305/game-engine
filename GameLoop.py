@@ -1,6 +1,5 @@
 import pygame
 import managingFunctions
-import game.engine
 import userKey
 import graphics
 import audio
