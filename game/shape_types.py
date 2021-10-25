@@ -1,5 +1,5 @@
 import pygame
-import game.graphics as graphics
+import graphics as graphics
 
 
 def change_to_square(shape, color, rect, real=False):

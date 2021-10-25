@@ -1,7 +1,8 @@
-from game import graphics, manager
-from game.shape_types import *
+import graphics
+import manager
+from shape_types import *
 import pygame
-import game.user_input as ui
+import user_input as ui
 
 
 # setting up a game_graphics

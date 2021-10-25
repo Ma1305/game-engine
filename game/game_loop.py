@@ -1,7 +1,7 @@
 import pygame
-import game.main
-import game.graphics as graphics
-import game.manager as manager
+import main
+import graphics as graphics
+import manager as manager
 
 clock = manager.game_loop.clock = pygame.time.Clock()
 

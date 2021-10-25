@@ -1,4 +1,4 @@
-import game.mathematics as math
+import mathematics as math
 import pygame
 
 
