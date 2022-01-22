@@ -1,5 +1,6 @@
 import mathematics as math
 import pygame
+import copy
 
 
 class GameGraphics:
@@ -19,7 +20,7 @@ class GameGraphics:
         self.looper_list = []
         self.camera = camera
         self.center = (self.width/2, self.height/2)
-        self.pause = False
+        self.storage = {}
 
     def add_shape(self, shape):
         self.shape_list.append(shape)
@@ -53,24 +54,41 @@ class GameGraphics:
             if looper.state:
                 looper.run()
 
+    def pause_user_input(self):
+        for on_input in self.on_input_list:
+            on_input.state = False
+
+    def unpause_user_input(self):
+        for on_input in self.on_input_list:
+            on_input.state = True
+
+    def pause_loopers(self):
+        for looper in self.looper_list:
+            looper.state = False
+
+    def unpause_loopers(self):
+        for looper in self.looper_list:
+            looper.state = True
+
     def pause(self):
-        pass
+        global game_graphics_list
+        if self in game_graphics_list:
+            game_graphics_list.remove(self)
+
+    def start(self):
+        global game_graphics_list
+        if self not in game_graphics_list:
+            game_graphics_list.append(self)
 
     def change_dimensions(self, dimensions):
-        pass
+        pygame.transform.scale(self.screen.screen, dimensions)
 
     def draw(self):
-        if self.pause:
-            return "paused"
-
         for shape in self.shape_list:
             shape.draw()
 
     def draw_background(self):
         self.screen.screen.fill(self.background_color)
-
-    def update(self):
-        pass
 
 
 class Camera:
@@ -154,6 +172,16 @@ def add_type(shape_type):
 def add_game_graphics(game_graphics_obj):
     global game_graphics_list
     game_graphics_list.append(game_graphics_obj)
+
+
+def game_graphics_copy(game_graphics, new_screen):
+    s = game_graphics.screen
+    game_graphics.screen = None
+    new_game_graphics = copy.deepcopy(game_graphics)
+    new_game_graphics.screen = new_screen
+
+    game_graphics.screen = s
+    return new_game_graphics
 
 
 types = []
