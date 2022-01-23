@@ -1,0 +1,13 @@
+Well this project took a long time to make.
+
+I'm probably gonna make some documents to help you use this easier, but for now here is what this project is for.
+
+I made this project to make it easier to make online multiplayer games.
+The interesting thing about this engine is that it can run all of the games at the same time, so as long the server's computer can keep up with all the work -and it won't slow down- the games will keep running.
+You can tweak with some stuff, but just to be safe READ THE DOCUMENTS THAT I WILL CREATE BEFORE CHANGING ANY OF THE CODE.
+
+I will make a document of what files should not be changed, everything (almost everything) has option to change.
+
+Like you can decide whether you want to have a screen on the server side or not.
+
+Anyways this engine is awesome, have fun with it!!
