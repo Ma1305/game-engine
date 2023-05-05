@@ -1,4 +1,4 @@
-import pygame
+"""import pygame
 import graphics as graphics
 import math
 
@@ -76,3 +76,4 @@ def move_circle(self, movement):
 
 circle = graphics.Type("circle", draw_circle, move=move_circle)
 graphics.add_type(circle)
+"""

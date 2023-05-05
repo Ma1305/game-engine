@@ -5,14 +5,12 @@ import manager as manager
 
 clock = manager.game_loop.clock = pygame.time.Clock()
 
-
 while True:
     # drawing graphics
     '''for game_graphics in graphics.game_graphics_list:
         game_graphics.draw_background()
         game_graphics.draw()'''
     if manager.game_loop.main_game_graphics:
-
         manager.game_loop.main_game_graphics.draw_background()
         manager.game_loop.main_game_graphics.draw()
 
@@ -24,6 +22,7 @@ while True:
         manager.game_loop.events = pygame.event.get()
     except pygame.error:
         manager.game_loop.events = []
+
     for game_graphics in graphics.game_graphics_list:
 
         for event in manager.game_loop.events:

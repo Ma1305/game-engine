@@ -19,7 +19,7 @@ class GameGraphics:
         self.on_input_list = []
         self.looper_list = []
         self.camera = camera
-        self.center = (self.width/2, self.height/2)
+        self.center = (self.width / 2, self.height / 2)
         self.storage = {}
 
     def add_shape(self, shape):
@@ -105,13 +105,13 @@ class Camera:
     def get_origin(self):
         center = self.game_graphics.center
         point = (-self.x, -self.y)
-        point = (self.zoom*point[0], self.zoom*point[1])
-        return center[0]+point[0], center[1]-point[1]
+        point = (self.zoom * point[0], self.zoom * point[1])
+        return center[0] + point[0], center[1] - point[1]
 
     def vr_to_real(self, point):
         origin = self.get_origin()
-        point = (self.zoom*point[0], self.zoom*point[1])
-        return origin[0]+point[0], origin[1]-point[1]
+        point = (self.zoom * point[0], self.zoom * point[1])
+        return origin[0] + point[0], origin[1] - point[1]
 
 
 class Screen:
@@ -129,26 +129,18 @@ class Object:
 
 class Shape:
     def __init__(self, game_graphics, shape_type):
-        global types
         self.game_graphics = game_graphics
         self.shape_type = shape_type
-        self.draw_func = self.shape_type.draw
-        self.move_func = self.shape_type.move
-        self.collide_func = self.shape_type.collider
         self.loop_functions_list = []
-        if self.shape_type.loop_function:
-            self.loop_functions_list.append(self.shape_type.loop_function)
 
     def draw(self):
-        self.draw_func(self)
+        pass
 
     def move(self, movement):
-        if self.move_func:
-            self.move_func(self, movement)
+        pass
 
     def collide(self, point):
-        if self.collide_func:
-            return self.collide_func(self, point)
+        pass
 
     def loop_functions(self):
         for func in self.loop_functions_list:
@@ -186,4 +178,3 @@ def game_graphics_copy(game_graphics, new_screen):
 
 types = []
 game_graphics_list = []
-
