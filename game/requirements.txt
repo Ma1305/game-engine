@@ -1,0 +1,4 @@
+pygame
+flask
+flask_socketio
+socketio

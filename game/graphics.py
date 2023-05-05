@@ -7,7 +7,7 @@ class GameGraphics:
     # gameGraphics is basically initializing a new game
     # if you want your game graphics to be added to the game loop you need to add it to the game graphics list
     # you can have multiple games running at the same time
-    # this helps making multiple game servers
+    # this helps with making multiple game servers
     # you can select which game graphics is your main graphics, and show it in your server side
 
     def __init__(self, screen, camera, background_color=(0, 0, 0)):
